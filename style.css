@@ -47,6 +47,11 @@ body {
   bottom: 0;
   color: white;
   text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  user-select: none;
+  transition: transform 0.3s, opacity 0.3s;
 }
 
 #song-card-info-artist {
@@ -58,6 +63,45 @@ body {
 }
 
 #song-card-info-title {
-  font-size: 1.5em;
+  font-size: 1.4em;
   margin-top: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#song-card:hover #song-card-info {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+#song-card-play {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: green;
+  bottom: 20px;
+  left: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translateX(-100px);
+  transition: transform 0.3s;
+}
+
+#song-card:hover #song-card-play {
+  transform: translateX(0px);
+}
+
+#triangle {
+  position: absolute;
+  top: 0px;
+  bottom: 0;
+  left: 0px;
+  right: 0;
+  width: 0;
+  height: 0;
+  margin: auto;
+  border-style: solid;
+  border-width: 7px 0 7px 10px;
+  border-color: transparent transparent transparent white;
 }
